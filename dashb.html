@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/@codingnepal -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/images/style2.css">
+
+    <!-- Linking Google Fonts for Icons -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0" />
+  </head>
+  <body>
+    <!-- Mobile Sidebar Menu Button -->
+    <button class="sidebar-menu-button">
+      <span class="material-symbols-rounded">menu</span>
+    </button>
+
+    <aside class="sidebar">
+      <!-- Sidebar Header -->
+      <header class="sidebar-header">
+        <a href="#" class="header-logo">
+          <img src="logo.png" alt="CodingNepal" />
+        </a>
+        <button class="sidebar-toggler">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+      </header>
+
+      <nav class="sidebar-nav">
+        <!-- Primary Top Nav -->
+        <ul class="nav-list primary-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-rounded">dashboard</span>
+              <span class="nav-label">Dashboard</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link dropdown-title">Dashboard</a></li>
+            </ul>
+          </li>
+
+          <!-- Dropdown -->
+          <li class="nav-item dropdown-container">
+            <a href="#" class="nav-link dropdown-toggle">
+              <span class="material-symbols-rounded">devices</span>
+              <span class="nav-label">Devices</span>
+              <span class="dropdown-icon material-symbols-rounded">keyboard_arrow_down</span>
+            </a>
+
+            <!-- Dropdown Menu -->
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link dropdown-title">Devices</a></li>
+              <li><div class="group">
+  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+  <input id="searchBox" type="text" class="input" placeholder="Search User ID..." onkeyup="filterUsers()">
+</div></li>
+              <li class="nav-item" id="userList"></li>
+              <!-- <li class="nav-item"><a href="#" class="nav-link dropdown-link">Cloud Solutions</a></li>
+              <li class="nav-item"><a href="#" class="nav-link dropdown-link">Mobile Apps</a></li> -->
+            </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-rounded">notifications</span>
+              <span class="nav-label">Notifications</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link dropdown-title">Notifications</a></li>
+            </ul>
+          </li>
+          
+
+          <!-- Dropdown -->
+          
+
+          
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-rounded">settings</span>
+              <span class="nav-label">Settings</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link dropdown-title">Settings</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <!-- Secondary Bottom Nav -->
+        <ul class="nav-list secondary-nav">
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-rounded">help</span>
+              <span class="nav-label">Support</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link dropdown-title">Support</a></li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <span class="material-symbols-rounded">logout</span>
+              <span class="nav-label">Sign Out</span>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="nav-item"><a class="nav-link dropdown-title">Sign Out</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+
+    
+<div class="bg1">
+
+  <div style="width: 90%; margin-left: 5%; height: 100%;">
+    <div style="display: flex; justify-content: space-between; width: 98%; margin-left: 1%; margin-top: 0.5%; border-bottom: solid; border-color: #4a4a4a; border-width: 1px; padding: 2%; text-align: center;">
+      <h2 style="margin-left: 5%;">Admin Dashboard</h2>
+      <!-- HTML !-->
+<button class="button-27" style="width: 20%;" role="button" id="selectedUser"></button>
+
+
+
+    </div>
+  
+    <div class="ubtn" style="margin-top: 2%;">
+     
+      <!-- <div class="bg2" style="height: 20vh;">
+        <p>Auto Mode</p>
+        <button id="Auto" class="btn square-btn btn-danger" onclick="toggleButton('Auto')">OFF</button>
+      </div> -->
+      <!-- From Uiverse.io by SachinKumar666 --> 
+       <div class="card" style="height: 35vh;">
+  <div class="card__shine"></div>
+  <div class="card__glow"></div>
+  <div class="card__content">
+    <div class="card__badge">
+    </div>
+    <!-- From Uiverse.io by reglobby -->
+     <div>
+      <div class="toggle-container">
+  <div class="toggle-wrap">
+    <input class="toggle-input" onclick="toggleButton('Auto')" id="Auto" type="checkbox" />
+    <label class="toggle-track" for="Auto">
+      <div class="track-lines">
+        <div class="track-line"></div>
+      </div>
+
+      <div class="toggle-thumb">
+        <div class="thumb-core"></div>
+        <div class="thumb-inner"></div>
+        <div class="thumb-scan"></div>
+        <div class="thumb-particles">
+          <div class="thumb-particle"></div>
+          <div class="thumb-particle"></div>
+          <div class="thumb-particle"></div>
+          <div class="thumb-particle"></div>
+          <div class="thumb-particle"></div>
+        </div>
+      </div>
+
+      <div class="toggle-data">
+        <div class="data-text off">OFF</div>
+        <div class="data-text on">ON</div>
+        <div class="status-indicator off"></div>
+        <div class="status-indicator on"></div>
+      </div>
+
+      <div class="energy-rings">
+        <div class="energy-ring"></div>
+        <div class="energy-ring"></div>
+        <div class="energy-ring"></div>
+      </div>
+
+      <div class="interface-lines">
+        <div class="interface-line"></div>
+        <div class="interface-line"></div>
+        <div class="interface-line"></div>
+        <div class="interface-line"></div>
+        <div class="interface-line"></div>
+        <div class="interface-line"></div>
+      </div>
+
+      <div class="toggle-reflection"></div>
+      <div class="holo-glow"></div>
+    </label>
+  </div>
+</div>
+     </div>
+
+    <div class="card__text">
+      <p class="card__title">Auto Mode</p>
+      
+    </div>
+    <div class="card__footer">
+      
+      <div class="card__button">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="card" style="height: 35vh; text-align: center;">
+  <div class="card__shine"></div>
+  <div class="card__glow"></div>
+  <div class="card__content">
+    <div class="card__badge">
+    </div>
+    <div style="--bg-color: #a78bfa; width: 100%; display: flex;align-items: center; justify-content: center;" class="card__image">
+      <span id="volt" style="color: white; font-weight: 600;"></span>
+    </div>
+    <div class="card__text">
+      <p class="card__title">Input Voltage</p>
+      
+    </div>
+    <div class="card__footer">
+      
+      <div class="card__button">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card" style="height: 35vh; text-align: center;">
+  <div class="card__shine"></div>
+  <div class="card__glow"></div>
+  <div class="card__content">
+    <div class="card__badge">
+    </div>
+    <div style="--bg-color: #a78bfa; width: 100%; display: flex;align-items: center; justify-content: center;" class="card__image">
+      <span id="Current" style="color: white; font-weight: 600;"></span>
+    </div>
+    <div class="card__text">
+      <p class="card__title">Input Current</p>
+      
+    </div>
+    <div class="card__footer">
+      
+      <div class="card__button">
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+      <!-- <div class="bg3" style="height: 20vh;">
+        <div style="display: flex; justify-content: space-between; margin-bottom: 4%;">
+          <p style="margin-top: 3%;">Motor Voltage: </p> 
+          <button class="button-20" id="volt" style="width: 9vw;"></button>
+        </div>
+        <div style="display: flex; justify-content: space-between;">
+          <p style="margin-top: 3%;">Motor Current: </p> 
+          <button class="button-20" id="Current" style="width: 9vw;"></button>
+        </div>
+      </div> -->
+
+      <div class="card" style="height: 65vh; width: 20vw; text-align: center; overflow-y: auto;">
+  <div class="card__shine"></div>
+  <div class="card__glow"></div>
+  <div class="card__content">
+    <div class="card__badge">
+    </div>
+    <div style="--bg-color: #a78bfa; width: 100%; display: flex; flex-direction: column;align-items: center; justify-content: center;" class="card__image">
+      <span id="Current" style="color: white; font-weight: 600;">Devices</span>
+      <div class="group">
+  <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><g><path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path></g></svg>
+  <input id="searchBox" type="text" class="input" placeholder="Search User ID..." onkeyup="filterUsers1()">
+</div>
+    </div>
+    
+    <div class="card__text">
+     
+      <p class="card__title"  id="userList"></p>
+    </div>
+    
+      
+    </div>
+  </div>
+</div>
+     
+
+    </div>
+  </div>
+</div>
+
+    <!-- Script -->
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+    <script>
+      // Toggle the visibility of a dropdown menu
+const toggleDropdown = (dropdown, menu, isOpen) => {
+  dropdown.classList.toggle("open", isOpen);
+  menu.style.height = isOpen ? `${menu.scrollHeight}px` : 0;
+};
+// Close all open dropdowns
+const closeAllDropdowns = () => {
+  document.querySelectorAll(".dropdown-container.open").forEach((openDropdown) => {
+    toggleDropdown(openDropdown, openDropdown.querySelector(".dropdown-menu"), false);
+  });
+};
+// Attach click event to all dropdown toggles
+document.querySelectorAll(".dropdown-toggle").forEach((dropdownToggle) => {
+  dropdownToggle.addEventListener("click", (e) => {
+    e.preventDefault();
+    const dropdown = dropdownToggle.closest(".dropdown-container");
+    const menu = dropdown.querySelector(".dropdown-menu");
+    const isOpen = dropdown.classList.contains("open");
+    closeAllDropdowns(); // Close all open dropdowns
+    toggleDropdown(dropdown, menu, !isOpen); // Toggle current dropdown visibility
+  });
+});
+// Attach click event to sidebar toggle buttons
+document.querySelectorAll(".sidebar-toggler, .sidebar-menu-button").forEach((button) => {
+  button.addEventListener("click", () => {
+    closeAllDropdowns(); // Close all open dropdowns
+    document.querySelector(".sidebar").classList.toggle("collapsed"); // Toggle collapsed class on sidebar
+  });
+});
+// Collapse sidebar by default on small screens
+if (window.innerWidth <= 1024) document.querySelector(".sidebar").classList.add("collapsed");
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDJDonRsKii93yh7H3U122jMzDQzJgxHnc",
+  authDomain: "demoapp-726c3.firebaseapp.com",
+  databaseURL: "https://demoapp-726c3-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "demoapp-726c3",
+};
+
+firebase.initializeApp(firebaseConfig);
+const db = firebase.database();
+
+let currentUserId = null;
+const buttons = ["Auto", "Manual", "P1", "P2", "P3", "P4"];
+let activeRefs = [];
+
+
+
+db.ref("users").on("value", (snapshot) => {
+    const container = document.getElementById("userList");
+    let html = "";
+
+    snapshot.forEach((child) => {
+        const id = child.key;
+
+   
+            html += `
+            <a href="#" class="nav-link dropdown-link" data-id="${id}" 
+               style="display: flex; flex-direction: column; padding:10px; text-decoration:none; color:white;">
+               ${id}
+            </a>
+        `;
+    });
+
+    container.innerHTML = html;
+
+   
+    document.querySelectorAll("#userList a").forEach((el) => {
+        el.addEventListener("click", function (e) {
+            e.preventDefault();
+            const id = this.getAttribute("data-id");
+            selectUser(id, this);
+        });
+    });
+});
+
+
+// 🔹 SELECT USER
+function selectUser(userId, element) {
+    currentUserId = userId;
+
+    document.getElementById("selectedUser").innerText =
+        "Selected User: " + userId;
+
+    // highlight
+    document.querySelectorAll("#userList a").forEach(a => {
+        a.style.background = "";
+    });
+    element.style.background = "#ddd";
+
+    loadUserData(); // 🔥 load data
+}
+
+function filterUsers() {
+    const input = document.getElementById("searchBox").value.toLowerCase();
+    const items = document.getElementById("userList").children;
+
+    for (let i = 0; i < items.length; i++) {
+        const text = items[i].innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            items[i].style.display = "";
+        } else {
+            items[i].style.display = "none";
+        }
+    }
+}
+
+// 🔹 LOAD USER DATA (REALTIME SYNC)
+function loadUserData() {
+
+    // remove old listeners
+    activeRefs.forEach(ref => ref.off());
+    activeRefs = [];
+
+    
+    buttons.forEach(id => {
+        const ref = db.ref(`users/${currentUserId}/${id}`);
+
+        ref.on("value", snapshot => {
+            console.log(id, snapshot.val());
+            updateButtonUI(id, snapshot.val());
+        });
+
+        activeRefs.push(ref);
+    });
+
+
+    const humRef = db.ref(`users/${currentUserId}/VOLTAGE`);
+    humRef.on("value", snap => {
+        document.getElementById("volt").textContent = snap.val();
+    });
+    activeRefs.push(humRef);
+
+    const tempRef = db.ref(`users/${currentUserId}/CURRENT`);
+    tempRef.on("value", snap => {
+        document.getElementById("Current").textContent = snap.val();
+    });
+    activeRefs.push(tempRef);
+}
+
+
+// 🔹 TOGGLE BUTTON (FIXED FOR CHECKBOX)
+function toggleButton(id) {
+    if (!currentUserId) {
+        alert("Select user first!");
+        return;
+    }
+
+    const ref = db.ref(`users/${currentUserId}/${id}`);
+
+    // 🔥 ALWAYS read DB first (important)
+    ref.once("value").then(snapshot => {
+
+        const currentState = (snapshot.val() === true || snapshot.val() === "true");
+
+        if (id === "Auto" && !currentState) {
+            db.ref(`users/${currentUserId}/Auto`).set(true);
+            db.ref(`users/${currentUserId}/Manual`).set(false);
+        } 
+        else if (id === "Manual" && !currentState) {
+            db.ref(`users/${currentUserId}/Manual`).set(true);
+            db.ref(`users/${currentUserId}/Auto`).set(false);
+        } 
+        else {
+            ref.set(!currentState);
+        }
+    });
+}
+
+
+// 🔹 UPDATE UI (FOR CHECKBOX TOGGLE)
+function updateButtonUI(id, state) {
+    const toggle = document.getElementById(id);
+    if (!toggle) return;
+
+    // 🔥 handle boolean + string
+    const value = (state === true || state === "true");
+
+    // ✅ update checkbox state
+    toggle.checked = value;
+}
+
+
+// 🔹 WRITE DATA
+function writeData() {
+    if (!currentUserId) return;
+
+    const humVal = document.getElementById("Hum").value;
+
+    db.ref(`users/${currentUserId}`).update({
+        humidity: humVal
+    });
+}
+    </script>
+  </body>
+</html>

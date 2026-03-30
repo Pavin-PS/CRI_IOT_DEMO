@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Lugrasimo&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: lightgray;
+    overflow-x: hidden;
+    display: flex;
+
+}
+
+header{
+    background-color: #3c8990;
+    height: 100vw;
+    width: 10vw;
+    border-radius: 0 5 5 0;
+    padding-top: 2px;
+    align-items: center;
+}
+.frm{
+    display: flex;
+    flex-direction: column;
+    margin-right: 25vw;
+    padding-top: 12vw;
+    align-items: center;
+    font-family: "Lugrasimo";
+   
+}
+.frm1{
+    display: flex;
+    flex-direction: column;
+    margin-right: 25vw;
+    padding-top: 18vw;
+    align-items: center;
+    
+}
+.max1{
+    padding-top: 5vh;
+    text-align: center;
+    margin-left: 5%;
+    height: 50%;
+    width: 93%;
+    display: flex;
+    justify-content: space-evenly;
+}
+input{
+    margin-top: 10px;
+    width: 300px;
+    height: 50px;
+    font-family: "Mozilla Headline", sans-serif;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    color: white;
+    border-radius: 5px;
+    border-color: whitesmoke;
+    background-color: #3c8990;
+    border-style: hidden;
+    padding: 5px;
+    font-weight: 400;
+}
+
+.bn{
+    background-color: white;
+    padding: 5px;
+    color: #003135;
+    border-radius: 10px;
+}
+
+.mode1{
+    
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+.main-mode{
+    border: solid;
+    border-color: lightgray;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 5vh 0 5vh 0;
+    align-items: center;
+    margin-left: 5px;
+    background-color: #ffffe3;
+    margin-bottom: 5px;
+    width: 100%;
+    height: 150px;
+    
+
+}
+
+.main-mode11{
+    border: solid;
+    border-color: lightgray;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 5vh 0 5vh 0;
+    align-items: center;
+    margin-left: 5px;
+    background-image: url('/assets/images/engine-coolant--v3.jpg');
+    background-size: contain;
+    
+    margin-bottom: 5px;
+    width: 100%;
+    height: 150px;
+
+}
+h4{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.main-mode1{
+    border: solid;
+    border-color: lightgray;
+    border-width: 2px;
+    border-radius: 10px;
+    padding: 5vh 0 5vh 0;
+    align-items: center;
+    text-align: center;
+    margin-left: 5px;
+    background-color: whitesmoke;
+    margin-bottom: 5px;
+    width: 100%;
+
+    margin-top: 5vh;
+
+}
+
+.mode12{
+    align-items: center;
+    text-align: center;
+}
+
+.sub12{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+td{
+    width: 8vw;
+    text-align: right;
+}
+.sansation-light {
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.sansation-regular {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sansation-bold {
+  font-family: "Sansation", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sansation-light-italic {
+  font-family: "Sansation", sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.sansation-regular-italic {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.sansation-bold-italic {
+  font-family: "Sansation", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.head-link:hover, p:hover{
+    
+    background-color: whitesmoke;
+    color: black;
+}
+
+
+a{
+    font-family: sansation; 
+    padding-left: 2%;
+}
+
+.weather{
+    width: 95%;
+    height: 180px;
+    margin-top: 10%;
+    margin-left: 2%;
+    background-image: url('/assets/images/istockphoto-2160311043-612x612.jpg');
+    background-size: cover;
+    opacity: 70%;
+    border-radius: 390px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5%;
+    color: wheat
+}
+
+.mnti{
+    width: 90%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+
+.container{
+   background-color: #ffffe3;
+}
