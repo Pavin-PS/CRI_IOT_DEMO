@@ -1376,3 +1376,17 @@ body {
   }
   
 }
+
+#userListSidebar a{
+  
+  color: white;
+  font-weight: 200px;
+  border-bottom: solid 1px white ;
+}
+
+#userListMain a{
+  
+  color: black;
+  font-weight: 200px;
+  border-bottom: solid 1px black ;
+}
