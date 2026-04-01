@@ -14,13 +14,13 @@ body{
     background-size: cover;
     display: flex;
     justify-content: space-between;
-    overflow: hidden;
+    /* overflow: hidden; */
 
 }
 
 .hme{
-    width: 48%;
-    height: 95%;
+    width: 50vw;
+    height: 98vh;
     margin-top: 1%;
     margin-bottom: 1%;
     margin-left: 1%;
@@ -270,6 +270,9 @@ body {
 .sidebar-menu-button {
   display: none;
 }
+.frm h1{
+  color: black;
+}
 
 /* Responsive media query code for small screens */
 @media (max-width: 768px) {
@@ -295,5 +298,26 @@ body {
 
   .sidebar.collapsed .sidebar-nav .primary-nav {
     transform: translateY(15px);
+  }
+  .hme{
+    position: absolute;
+    z-index: -1;
+    width: 98vh;
+    height: 98vh;
+  }
+  .frm{
+    position: absolute;
+    z-index: 1;
+    width: 70vw;
+    
+    
+    
+  }
+  .frm h1{
+    color: white;
+  }
+
+  .frm input{
+    width: 68vw;
   }
 }
